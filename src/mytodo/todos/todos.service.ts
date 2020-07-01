@@ -7,7 +7,7 @@ import { User, UserInterface } from '../users/user.schema';
 @Injectable()
 export class TodosService {
   constructor(
-    @InjectModel('todos') private todoModel: Model<Todo>,
+    @InjectModel('todos') public todoModel: Model<Todo>,
     @InjectModel('users') private userModel: Model<User>,
   ) {}
 
