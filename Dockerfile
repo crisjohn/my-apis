@@ -13,4 +13,3 @@ COPY . .
 RUN npm run build
 EXPOSE 3000
 CMD [ "npm", "run", "start:prod" ]
-# docker run --name food-finder-api -v /www/food-finder-api/public:/app/public -p 3000:3000 -d food-finder-api

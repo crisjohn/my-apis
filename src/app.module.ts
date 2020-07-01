@@ -8,15 +8,15 @@ import { MytodoModule } from './mytodo/mytodo.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    // MongooseModule.forRoot(
-    //   `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}`,
-    //   {
-    //     dbName: process.env.DB_NAME,
-    //     user: process.env.DB_USER,
-    //     pass: process.env.DB_PASS,
-    //   },
-    // ),
-    MongooseModule.forRoot('mongodb://localhost:27017/lcl-db'),
+    MongooseModule.forRoot(
+      `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}`,
+      {
+        dbName: process.env.DB_NAME,
+        user: process.env.DB_USER,
+        pass: process.env.DB_PASS,
+      },
+    ),
+    // MongooseModule.forRoot('mongodb://localhost:27017/lcl-db'),
     MytodoModule,
   ],
   controllers: [AppController],
