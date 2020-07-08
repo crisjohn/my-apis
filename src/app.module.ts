@@ -20,7 +20,6 @@ import { McModule } from './mc/mc.module';
         pass: process.env.DB_PASS,
       },
     ),
-    // MongooseModule.forRoot('mongodb://localhost  :27017/lcl-db'),
     MytodoModule,
     McModule,
   ],
