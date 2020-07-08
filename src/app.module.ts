@@ -8,16 +8,19 @@ import { McModule } from './mc/mc.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
-    // MongooseModule.forRoot(
-    //   `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}`,
-    //   {
-    //     dbName: process.env.DB_NAME,
-    //     user: process.env.DB_USER,
-    //     pass: process.env.DB_PASS,
-    //   },
-    // ),
-    MongooseModule.forRoot('mongodb://localhost:27017/lcl-db'),
+    ConfigModule.forRoot({
+      envFilePath: ['.env', 'prod.env'],
+      isGlobal: true,
+    }),
+    MongooseModule.forRoot(
+      `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}`,
+      {
+        dbName: process.env.DB_NAME,
+        user: process.env.DB_USER,
+        pass: process.env.DB_PASS,
+      },
+    ),
+    // MongooseModule.forRoot('mongodb://localhost  :27017/lcl-db'),
     MytodoModule,
     McModule,
   ],
